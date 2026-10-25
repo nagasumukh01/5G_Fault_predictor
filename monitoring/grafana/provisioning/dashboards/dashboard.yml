@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: '5G Operations'
+    orgId: 1
+    folder: 'Telecom NOC'
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /etc/grafana/provisioning/dashboards

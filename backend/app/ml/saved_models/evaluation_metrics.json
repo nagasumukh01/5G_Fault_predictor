@@ -1,0 +1,71 @@
+{
+  "model_version": "v1.0-rf-iforest",
+  "last_trained_timestamp": "2026-10-25T18:48:02.989862",
+  "dataset_summary": {
+    "total_samples": 15750,
+    "train_samples": 12600,
+    "test_samples": 3150,
+    "fault_prevalence_train_pct": 2.22,
+    "fault_prevalence_test_pct": 4.6,
+    "split_strategy": "Strict Temporal Split (Chrono, No Leakage)"
+  },
+  "evaluation_metrics": {
+    "precision": 0.9932,
+    "recall": 1.0,
+    "f1_score": 0.9966,
+    "roc_auc": 1.0,
+    "pr_auc": 1.0,
+    "false_positive_rate": 0.0003,
+    "missed_fault_rate": 0.0,
+    "lead_time_minutes": 22.5,
+    "inference_latency_ms": 0.0431,
+    "training_time_seconds": 1.716
+  },
+  "confusion_matrix": [
+    [
+      3004,
+      1
+    ],
+    [
+      0,
+      145
+    ]
+  ],
+  "baseline_comparison": {
+    "random_forest": {
+      "precision": 0.9932,
+      "recall": 1.0,
+      "f1": 0.9966,
+      "roc_auc": 1.0
+    },
+    "logistic_regression": {
+      "precision": 1.0,
+      "recall": 0.9931,
+      "f1": 0.9965,
+      "roc_auc": 1.0
+    },
+    "threshold_rule_baseline": {
+      "precision": 1.0,
+      "recall": 0.6,
+      "f1": 0.75,
+      "description": "Fixed 3GPP static threshold alarms (reactive, high false alarm / late detection)"
+    }
+  },
+  "feature_importances": {
+    "latency_rolling_mean_3": 0.21758462721283706,
+    "latency_ms": 0.20203495266838922,
+    "latency_lag_1": 0.1567513133779742,
+    "latency_lag_2": 0.12794310101925727,
+    "latency_rolling_std_3": 0.059744480842699677,
+    "spectral_efficiency_proxy": 0.05515117553248592,
+    "packet_loss_rolling_mean_3": 0.022364122937900164,
+    "sinr_rolling_mean_3": 0.020439693705591157,
+    "sinr_db": 0.019181725934263528,
+    "rsrp_dbm": 0.018536381390930015,
+    "packet_loss_pct": 0.01712409784098293,
+    "rsrp_lag_1": 0.014900467110409056,
+    "rsrp_rolling_mean_3": 0.012894189538755424,
+    "throughput_mbps": 0.010244037208838314,
+    "rsrp_lag_2": 0.00845022816418261
+  }
+}
