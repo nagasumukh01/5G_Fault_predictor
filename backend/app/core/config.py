@@ -19,14 +19,16 @@ class Settings:
         f"sqlite:///{BASE_DIR.as_posix()}/data/5g_telemetry.db"
     )
     
-    # CORS
+    # Comma-separated origins are supplied by the deployment environment.
+    # Keep local development origins as the default.
     CORS_ORIGINS: List[str] = [
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "https://*.vercel.app",
-        "*"
+        origin.strip()
+        for origin in os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,http://127.0.0.1:5173,"
+            "http://localhost:3000,http://127.0.0.1:3000"
+        ).split(",")
+        if origin.strip()
     ]
     
     # Model Artifacts Path

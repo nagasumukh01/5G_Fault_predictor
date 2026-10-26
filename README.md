@@ -139,9 +139,13 @@ docker-compose up --build -d
 - Prometheus: `http://localhost:9090`
 - Grafana: `http://localhost:3001` (Credentials: `admin` / `admin`)
 
+## 6. Cloud Deployment
+
+Deploy the backend to Render first using the included [`render.yaml`](render.yaml). The complete step-by-step Render flow, environment variables, health checks, and the later Vercel frontend deployment are documented in [`docs/setup.md`](docs/setup.md).
+
 ---
 
-## 6. Real Empirical Model Evaluation Metrics
+## 7. Real Empirical Model Evaluation Metrics
 
 Evaluated strictly on held-out temporal test set (3,150 samples):
 

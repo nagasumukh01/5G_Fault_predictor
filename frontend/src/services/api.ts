@@ -9,7 +9,7 @@ import {
   ModelMetrics
 } from '../types';
 
-const API_BASE_URL = (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_API_URL) || '';
+const API_BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
 const API_V1 = `${API_BASE_URL}/api/v1`;
 
 const client = axios.create({
